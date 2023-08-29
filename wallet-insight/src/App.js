@@ -1,21 +1,17 @@
-import React from 'react';
-import SearchBar from "./components/search-bar/search-bar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { default as Home } from "./Pages/home";
-import { default as GraphPage } from "./Pages/graph-page";
+import { Home } from "./pages/Home";
+import { Graph } from "./pages/Graph";
+import { Route, Routes, Navigate } from "react-router-dom";
+import React from "react";
 
-class App extends React.Component {
-  render() {
+function App() {
     return (
-      <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/GraphPage" element={<GraphPage />} />
-          <Route path='*' element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/Graph" element={<Graph />} />
+            <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </Router>
-    );
-  }
+    )
+
 }
 
-export default App;
+export default App
