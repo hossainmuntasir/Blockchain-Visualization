@@ -1,5 +1,5 @@
-import { Container, CssBaseline, Typography, colors } from "@mui/material";
-import { SearchBar } from "../components/SearchBar";
+import { Container, Typography } from "@mui/material";
+import { SearchBar } from "../components";
 import React from "react";
 
 export function Home() {
@@ -11,7 +11,7 @@ export function Home() {
                 justifyContent: "center"
             }}>
                 <Typography variant="h1" gutterBottom sx={{ textAlign: "center", color: 'white' }}>Wallet Insight</Typography>
-                <SearchBar></SearchBar>
+                <SearchBar searchTerm=''></SearchBar>
             </Container >
         </>
     )

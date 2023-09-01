@@ -2,8 +2,13 @@ body {
     background-color: #111F2C;
 }
 
-* {
+body,
+html {
     margin: 0;
     border: 0;
     box-sizing: border-box;
+}
+
+*:focus {
+    outline: 'none' !important
 }
