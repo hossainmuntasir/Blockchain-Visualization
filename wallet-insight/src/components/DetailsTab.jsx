@@ -1,4 +1,4 @@
-import { Box, Chip, Grid, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
 
 export default function DetailsTab(props) {
@@ -6,7 +6,10 @@ export default function DetailsTab(props) {
 
     return (
         <>
-            <Box borderRadius={1} padding={2} backgroundColor={'white'} height={'80vh'} overflow={'scroll'}>
+            <Box borderRadius={1} padding={2} backgroundColor={'white'} height={'80vh'} sx={{
+                scrollbarWidth: 'thin',
+                overflowY: 'scroll'
+            }}>
 
                 <Grid container spacing={1} >
 
@@ -24,7 +27,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'right'} >
-                            <Typography>Current Balance:</Typography>
+                            <Typography align='right'>Current Balance:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -36,7 +39,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>Total Sent:</Typography>
+                            <Typography align='right'>Total Sent:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -48,7 +51,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>Total Recieved:</Typography>
+                            <Typography align='right'>Total Recieved:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -60,7 +63,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>To/From Trans:</Typography>
+                            <Typography align='right'>To/From Trans:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6} marginBottom={3}>
@@ -72,7 +75,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>Latest Transaction:</Typography>
+                            <Typography align='right'>Latest Transaction:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -83,7 +86,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>Time:</Typography>
+                            <Typography align='right'>Time:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -94,7 +97,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>Amount:</Typography>
+                            <Typography align='right'>Amount:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -117,7 +120,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>First Transaction:</Typography>
+                            <Typography align='right'>First Transaction:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -128,7 +131,7 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>Time:</Typography>
+                            <Typography align='right'>Time:</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -139,9 +142,9 @@ export default function DetailsTab(props) {
 
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
-                            <Typography>Amount:</Typography>
+                            <Typography align='right'>Amount:</Typography>
                         </Box>
-                    </Grid>
+                    </Grid >
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-start'} >
                             <Typography>{data.firstTransaction.amount}</Typography>

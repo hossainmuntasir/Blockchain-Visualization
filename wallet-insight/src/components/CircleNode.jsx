@@ -1,7 +1,7 @@
 import React from "react";
 import { Handle } from "reactflow";
 
-const CircleNode = ({ data }) => {
+export default function CircleNode(data) {
     return (
         <div
             style={{
@@ -19,11 +19,9 @@ const CircleNode = ({ data }) => {
                 fontSize: "14px"
             }}
         >
-            {data.label}
+            {data.data.label}
             <Handle type="target" isConnectable={false} />
             <Handle type="source" isConnectable={false} />
         </div>
     );
 };
-
-export default CircleNode;

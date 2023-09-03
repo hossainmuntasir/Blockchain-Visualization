@@ -20,7 +20,6 @@ export default function SearchBar(props) {
 
     const onSubmit = (data) => {
         if (props.callBack) props.callBack(data.searchTerm);
-        // navigate({`/Graph/${data.searchTerm}`});
         navigate('/Graph/' + data.searchTerm);
     };
 

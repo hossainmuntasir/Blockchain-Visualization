@@ -6,19 +6,22 @@ import { useParams } from "react-router-dom";
 
 
 export function Graph() {
+    const { initialSearchTerm } = useParams();
+    const [searchTerm, setSearchTerm] = useState()
 
-    const testData = data.objectData[0]
-
-    const [targetNode, setTargetNode] = useState();
+    const [targetNode, setTargetNode] = useState(data.initialNodes[0].data);
     const [validSearchTerm, setValidSearchTerm] = useState(false);
 
     // SearchBar will return a string which will then be matched against an object in the database
     const UpdateSearchTerm = (searchTerm) => {
-        // if searchTerm exists as an object in the database
-        setTargetNode('');
-        setValidSearchTerm(true);
+        setSearchTerm(searchTerm)
+        // if searchTerm exists as an object in the database set the targetNode
+        // setTargetNode('');
         // else
+        // TODO Handle invalid search term
     }
+
+
 
     return (
         <>
@@ -30,11 +33,11 @@ export function Graph() {
             <Grid container columnSpacing={2} paddingX={3} sx={{ height: '80vh', maxHeight: '80vh' }}>
 
                 <Grid item md={4} xs={6} borderRadius={2} >
-                    <DetailsTab data={testData}></DetailsTab>
+                    <DetailsTab data={targetNode}></DetailsTab>
                 </Grid>
 
                 <Grid item md={8} xs={6} borderRadius={2}>
-                    <GraphRegion callBack={setTargetNode}></GraphRegion>
+                    <GraphRegion searchTerm={searchTerm} callBack={setTargetNode}></GraphRegion>
                 </Grid>
             </Grid >
         </>

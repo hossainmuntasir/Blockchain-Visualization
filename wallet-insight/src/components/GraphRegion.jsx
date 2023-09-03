@@ -4,13 +4,14 @@ import ReactFlow, {
     Background,
     applyNodeChanges,
     applyEdgeChanges,
-    useStoreApi,
-    useReactFlow
 } from "reactflow";
 import "reactflow/dist/style.css";
-import CircleNode from "./CircleNode";
-import * as data from '../utils/TestData';
 
+import * as data from '../utils/TestData';
+import CircleNode from './CircleNode';
+
+
+// Styling nodes
 
 const nodeTypes = {
     circle: CircleNode
@@ -20,22 +21,18 @@ const nodeTypes = {
 const initialNodes = data.initialNodes;
 const initialEdges = data.initialEdges;
 
-const nodeData = data.objectData;
-
-// console.log(nodeData[0]);
-
-const onNodeClick = (event, node) => {
-    console.log("Node clicked:", node.id);
-};
-
-const onEdgeClick = (event, edge) => {
-    console.log("Edge clicked:", edge.id);
-};
-
 
 export default function GraphRegion(props) {
-    // const store = useStoreApi();
-    // const { zoomIn, zoomOut, setCenter } = useReactFlow();
+
+    const onNodeClick = (event, node) => {
+        // TODO GET call to return a nodes information based on an id.
+        console.log(node.data);
+        props.callBack(node.data);
+    };
+
+    const onEdgeClick = (event, edge) => {
+        // TODO Allow details tab to handle an edge event.
+    };
 
     const [nodes, setNodes] = useState(initialNodes);
     const [edges, setEdges] = useState(initialEdges);
