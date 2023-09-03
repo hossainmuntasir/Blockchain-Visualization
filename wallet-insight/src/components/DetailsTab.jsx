@@ -1,67 +1,118 @@
 import { Box, Chip, Grid, Typography } from '@mui/material'
 import React from 'react'
+// import { styled } from '@mui/material/styles';
+
+
 
 export default function DetailsTab(props) {
     // Map props to variables
 
     return (
-        <>
-            <Box sx ={{
-                width:'100%',
-                height:'100%',
-                display:'grid',
-                gap:1,
-                // gap:'8px',
-                gridTemplateColumns:'1fr 1fr',
-                // gridTemplateRows:'repeat(1fr, 16)',
-                alignItems:'center',
-            }}>
-                <Typography variant='h5' noWrap='false' sx={{gridColumn:'span 2'}}>Thy4SDBjSyas22g1EDSydsa</Typography>
-                {/* <Typography variant='h5' noWrap='false' className='wallet-address'>{walletAddress}</Typography> */}
+        <div style={{ backgroundColor: 'white', padding: '16px', borderRadius: '8px', height: '100%' }}>
+            <Grid container spacing={1}>
+                <Grid item xs={12}>
+                    <Typography justifySelf={'end'}
+                        marginBottom={3}
+                        sx={{
+                            backgroundColor: 'orange', wordBreak: 'break-all'
+                        }}
+                    >asdfasasdfasdfasdfaasdfasdfsdfasdfasdfasdfdfasdfaasdfasdfsdfasdfasdfasdf</Typography>
+                </Grid>
 
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Current Balance:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>185 USDT</Typography>
 
-                
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Total Sent:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>4,794,806.1506 USDT</Typography>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Current Balance:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>185 USDT</Typography>
+                </Grid>
 
-                
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Total Recieved:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>4,794,806.1506 USDT</Typography>
 
-                
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>To/From Trans:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>7/123</Typography>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Total Sent:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>4,794,806.1506 USDT</Typography>
+                </Grid>
 
-                {/*  */}
 
-                <Chip variant='filled' color='error'>Snt</Chip>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Total Recieved:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>4,794,806.1506 USDT</Typography>
+                </Grid>
 
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Latest Transaction:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>sduf6hgq2BySDSAh1nicd398hBSGj</Typography>
 
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Time:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>03/11/2023 23:28</Typography>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>To/From Trans:</Typography>
+                </Grid>
+                <Grid item xs={6} marginBottom={3}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>7/123</Typography>
+                </Grid>
 
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Amount:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>12.678 USDT</Typography>
 
-                {/*  */}
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Latest Transaction:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red', wordBreak: 'break-all' }}>sduf6hgq2BySDSAh1nicd398hBSGj</Typography>
+                </Grid>
 
-                <Chip variant='filled' color='success'>Rcv</Chip>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Time:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>03/11/2023 23:28</Typography>
+                </Grid>
 
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>First Transaction:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>0xasdfuy1H2hSiii12YggbUIj1mawdf71hbnutGh5R</Typography>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Amount:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>12.678 USDT</Typography>
+                </Grid>
 
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Time:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>01/05/2018 08:45</Typography>
 
-                <Typography variant='h6' sx={{justifySelf:'end', gridColumn:'span 1'}}>Amount:</Typography>
-                <Typography variant='h6' sx={{justifySelf:'start', gridColumn:'span 1'}}>199.99 USDT</Typography>
-                
-                
-            </Box>
-        </>
+
+                <Grid item xs={6} marginBottom={3}>
+                    <Chip variant='filled' color='error' label='Snt'></Chip>
+                </Grid>
+                <Grid item xs={6} height={'16px'}>
+                </Grid>
+
+
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>First Transaction:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red', wordBreak: 'break-all' }}>0xasdfuy1H2hSiii12YggbUIj1mawdf71hbnutGh5R</Typography>
+                </Grid>
+
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Time:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>01/05/2018 08:45</Typography>
+                </Grid>
+
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'end', backgroundColor: 'green' }}>Amount:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography sx={{ justifySelf: 'start', backgroundColor: 'red' }}>199.99 USDT</Typography>
+                </Grid>
+
+                <Grid item xs={6}>
+                    <Chip variant='filled' label='Rcv' color='success'></Chip>
+                </Grid>
+                <Grid item xs={6}>
+                </Grid>
+
+            </Grid >
+        </div>
     )
 }
+
+
+
