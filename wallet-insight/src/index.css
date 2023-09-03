@@ -1,16 +1,15 @@
 body {
     background-color: #111F2C;
+    overflow-y: hidden;
 }
 
+#root,
 body,
 html {
     margin: 0;
     border: 0;
     box-sizing: border-box;
-}
-
-*:focus {
-    outline: 'none' !important
+    height: 100vh;
 }
 
 .react-flow__handle {

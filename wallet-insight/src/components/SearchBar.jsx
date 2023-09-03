@@ -1,21 +1,25 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Search } from "@mui/icons-material";
 import Input from '@mui/joy/Input';
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 
 
 export default function SearchBar(props) {
 
     const navigate = useNavigate();
+    const { searchTerm } = useParams();
 
+
+    // Setup for future error handling 
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
-        defaultValues: { searchTerm: props.searchTerm.walletId }
+        defaultValues: { searchTerm: searchTerm }
     });
 
     const onSubmit = (data) => {
+        if (props.callBack) props.callBack(data.searchTerm);
         // navigate({`/Graph/${data.searchTerm}`});
         navigate('/Graph/' + data.searchTerm);
     };
@@ -33,6 +37,7 @@ export default function SearchBar(props) {
                 size="lg" variant="outlined"
                 placeholder="Enter A Wallet Address..."
                 sx={{
+                    // Turn off focus outline
                     '&::before': {
                         display: 'none',
                     },

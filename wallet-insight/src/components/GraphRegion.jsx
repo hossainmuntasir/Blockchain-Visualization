@@ -9,10 +9,20 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 import CircleNode from "./CircleNode";
+import * as data from '../utils/TestData';
+
 
 const nodeTypes = {
     circle: CircleNode
 };
+
+// Hardcoded Dataset
+const initialNodes = data.initialNodes;
+const initialEdges = data.initialEdges;
+
+const nodeData = data.objectData;
+
+// console.log(nodeData[0]);
 
 const onNodeClick = (event, node) => {
     console.log("Node clicked:", node.id);
@@ -27,8 +37,8 @@ export default function GraphRegion(props) {
     // const store = useStoreApi();
     // const { zoomIn, zoomOut, setCenter } = useReactFlow();
 
-    const [nodes, setNodes] = useState(props.initialNodes);
-    const [edges, setEdges] = useState(props.initialEdges);
+    const [nodes, setNodes] = useState(initialNodes);
+    const [edges, setEdges] = useState(initialEdges);
     const onNodesChange = useCallback(
         (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
         []
@@ -39,7 +49,7 @@ export default function GraphRegion(props) {
     );
     return (
         <>
-            <div style={{ height: '100%', backgroundColor: 'white' }}>
+            <div style={{ height: '100%', backgroundColor: 'white', borderRadius: '8px' }}>
                 <ReactFlow
                     nodes={nodes}
                     onNodesChange={onNodesChange}

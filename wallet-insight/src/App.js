@@ -8,7 +8,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/Graph" element={<Graph />} /> */}
-            <Route path="/Graph/:walletId" element={<Graph />} />
+            <Route path="/Graph/:searchTerm" element={<Graph />} />
             <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     )
