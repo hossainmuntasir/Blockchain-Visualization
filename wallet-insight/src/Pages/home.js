@@ -11,7 +11,7 @@ export function Home() {
                 justifyContent: "center"
             }}>
                 <Typography variant="h1" gutterBottom sx={{ textAlign: "center", color: 'white' }}>Wallet Insight</Typography>
-                <SearchBar searchTerm=''></SearchBar>
+                <SearchBar></SearchBar>
             </Container >
         </>
     )

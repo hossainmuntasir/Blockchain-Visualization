@@ -4,9 +4,14 @@ import React, { useState } from "react";
 import * as data from "../utils/TestData"
 import { useParams } from "react-router-dom";
 
+// Test Data
+const testData = data.initialNodes;
 
 export function Graph() {
+
     const { initialSearchTerm } = useParams();
+
+
     const [searchTerm, setSearchTerm] = useState()
 
     const [targetNode, setTargetNode] = useState(data.initialNodes[0].data);
@@ -14,7 +19,14 @@ export function Graph() {
 
     // SearchBar will return a string which will then be matched against an object in the database
     const UpdateSearchTerm = (searchTerm) => {
-        setSearchTerm(searchTerm)
+        // Check if searchTerm is an existing node.
+        testData.forEach(e => {
+            if (e.data.id == searchTerm) {
+                setTargetNode(e.data)
+            }
+        });
+
+        // if(searchTerm)
         // if searchTerm exists as an object in the database set the targetNode
         // setTargetNode('');
         // else

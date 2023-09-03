@@ -1,5 +1,5 @@
-import { Home } from "./pages/Home";
-import { Graph } from "./pages/Graph";
+import { Home } from "./Pages/home";
+import { Graph } from "./Pages/Graph";
 import { Route, Routes, Navigate } from "react-router-dom";
 import React from "react";
 

@@ -26,7 +26,6 @@ export default function GraphRegion(props) {
 
     const onNodeClick = (event, node) => {
         // TODO GET call to return a nodes information based on an id.
-        console.log(node.data);
         props.callBack(node.data);
     };
 
