@@ -6,6 +6,7 @@ export default function DetailsTab(props) {
 
     return (
         <>
+            {/* Container */}
             <Box borderRadius={1} padding={2} backgroundColor={'white'} height={'80vh'} sx={{
                 scrollbarWidth: 'thin',
                 overflowY: 'scroll'
@@ -13,6 +14,7 @@ export default function DetailsTab(props) {
 
                 <Grid container spacing={1} >
 
+                    {/* Wallet Address */}
                     <Grid item xs={12}>
                         <Typography
                             marginBottom={3}
@@ -25,6 +27,7 @@ export default function DetailsTab(props) {
                     </Grid>
 
 
+                    {/* Current Balance */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'right'} >
                             <Typography align='right'>Current Balance:</Typography>
@@ -37,6 +40,8 @@ export default function DetailsTab(props) {
                     </Grid>
 
 
+
+                    {/* Total Sent */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>Total Sent:</Typography>
@@ -49,6 +54,8 @@ export default function DetailsTab(props) {
                     </Grid>
 
 
+
+                    {/* Total Recieved */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>Total Recieved:</Typography>
@@ -61,6 +68,8 @@ export default function DetailsTab(props) {
                     </Grid>
 
 
+
+                    {/* To/From Trans */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>To/From Trans:</Typography>
@@ -73,6 +82,8 @@ export default function DetailsTab(props) {
                     </Grid>
 
 
+
+                    {/* Latest Transaction Address */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>Latest Transaction:</Typography>
@@ -84,6 +95,9 @@ export default function DetailsTab(props) {
                         </Box>
                     </Grid>
 
+
+
+                    {/* Time */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>Time:</Typography>
@@ -95,6 +109,9 @@ export default function DetailsTab(props) {
                         </Box>
                     </Grid>
 
+
+
+                    {/* Amount */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>Amount:</Typography>
@@ -108,16 +125,20 @@ export default function DetailsTab(props) {
 
 
 
+                    {/* Recieved / Sent */}
                     <Grid item xs={6} marginBottom={3}>
                         {data.latestTransaction.isRecieved
                             ? <Box backgroundColor={'#63f772'} width={'50%'} padding={1} borderRadius={5} textAlign={'center'} color={'white'}>RCV</Box>
                             : <Box backgroundColor={'#f94c4c'} width={'50%'} padding={1} borderRadius={5} textAlign={'center'} color={'white'}>SNT</Box>
                         }
                     </Grid>
+                    {/* Blank area */}
                     <Grid item xs={6} height={'16px'}>
                     </Grid>
 
 
+
+                    {/* First Transaction Address */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>First Transaction:</Typography>
@@ -129,6 +150,9 @@ export default function DetailsTab(props) {
                         </Box>
                     </Grid>
 
+
+
+                    {/* Time */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>Time:</Typography>
@@ -140,6 +164,9 @@ export default function DetailsTab(props) {
                         </Box>
                     </Grid>
 
+
+
+                    {/* Amount */}
                     <Grid item xs={6}>
                         <Box display={'flex'} justifyContent={'flex-end'} >
                             <Typography align='right'>Amount:</Typography>
@@ -151,13 +178,15 @@ export default function DetailsTab(props) {
                         </Box>
                     </Grid>
 
+
+
+                    {/* Recieved / Sent */}
                     <Grid item xs={6} marginBottom={3}>
                         {data.firstTransaction.isRecieved
                             ? <Box backgroundColor={'#63f772'} width={'50%'} padding={1} borderRadius={5} textAlign={'center'} color={'white'}>RCV</Box>
                             : <Box backgroundColor={'#f94c4c'} width={'50%'} padding={1} borderRadius={5} textAlign={'center'} color={'white'}>SNT</Box>
                         }
                     </Grid>
-
                 </Grid >
             </Box >
         </ >

@@ -7,12 +7,11 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 
+// Hardcoded Data
 import * as data from '../utils/TestData';
+
 import CircleNode from './CircleNode';
-
-
 // Styling nodes
-
 const nodeTypes = {
     circle: CircleNode
 };
@@ -35,6 +34,7 @@ export default function GraphRegion(props) {
 
     const [nodes, setNodes] = useState(initialNodes);
     const [edges, setEdges] = useState(initialEdges);
+
     const onNodesChange = useCallback(
         (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
         []
@@ -43,6 +43,7 @@ export default function GraphRegion(props) {
         (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
         []
     );
+
     return (
         <>
             <div style={{ height: '100%', backgroundColor: 'white', borderRadius: '8px' }}>
@@ -54,11 +55,12 @@ export default function GraphRegion(props) {
                     nodeTypes={nodeTypes}
                     onNodeClick={onNodeClick}
                     onEdgeClick={onEdgeClick}
+                    fitView
                 >
                     <Background />
                     <Controls position="top-right" />
                 </ReactFlow>
-            </div>
+            </div >
         </>
     );
-}
+};

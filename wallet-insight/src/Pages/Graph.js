@@ -1,6 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import { SearchBar, DetailsTab, GraphRegion } from "../components";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as data from "../utils/TestData"
 import { useParams } from "react-router-dom";
 
@@ -11,6 +11,9 @@ export function Graph() {
 
     const { initialSearchTerm } = useParams();
 
+    useEffect(() => {
+        UpdateSearchTerm(initialSearchTerm);
+    }, []);
 
     const [searchTerm, setSearchTerm] = useState()
 
@@ -25,11 +28,6 @@ export function Graph() {
                 setTargetNode(e.data)
             }
         });
-
-        // if(searchTerm)
-        // if searchTerm exists as an object in the database set the targetNode
-        // setTargetNode('');
-        // else
         // TODO Handle invalid search term
     }
 

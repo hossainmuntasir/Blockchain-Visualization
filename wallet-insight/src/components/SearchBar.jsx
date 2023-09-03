@@ -10,15 +10,16 @@ import { useParams } from "react-router-dom";
 export default function SearchBar(props) {
 
     const navigate = useNavigate();
-    const { searchTerm } = useParams();
+    const { initialSearchTerm } = useParams();
 
 
     // Setup for future error handling 
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
-        defaultValues: { searchTerm: searchTerm }
+        defaultValues: { searchTerm: initialSearchTerm }
     });
 
     const onSubmit = (data) => {
+        // On submit, inform parent component if it requires it
         if (props.callBack) props.callBack(data.searchTerm);
         navigate('/Graph/' + data.searchTerm);
     };
@@ -43,6 +44,7 @@ export default function SearchBar(props) {
                 }}
                 endDecorator={<Button variant="contained" type="submit"><Search></Search></Button>}>
             </Input>
+            {/* TODO Error handling message / styling */}
             {/* {errors.searchTerm && <Typography variant="h6" sx={{ color: 'red' }}>{errors.searchTerm?.message}</Typography>} */}
         </form>
     )
