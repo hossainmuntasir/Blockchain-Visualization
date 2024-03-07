@@ -1,0 +1,21 @@
+from neo4j import GraphDatabase
+
+
+class GraphDB:
+
+    def __init__(self):
+
+        uri = "uri"
+        user = "username"
+        password = "password"
+
+        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        print("Neo4j GDB address:", self.driver.get_server_info().address)
+
+    def close(self):
+        self.driver.close()
+
+
+if __name__ == "__main__":
+    GDB = GraphDB()
+    GDB.close()
